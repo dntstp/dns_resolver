@@ -4,12 +4,12 @@ Dart package that implements DNS over HTTPS client
 ## Features
 
 This package provides a simple way to resolve DNS queries using DNS over HTTPS (DoH) protocol.
-At the moment it supports Google Public DNS Resolver only.
+At the moment it supports Google Public DNS and Cloudflare Resolvers only.
 Resolver class implements DnsCache, so subsequent queries for the same domain will be resolved from cache.
 For simplicity, if the domain resolves to multiple IP addresses, only the last one will be returned.
 
 TODO:
-- [ ] add support for Cloudflare 1.1.1.1
+- [*] add support for Cloudflare 1.1.1.1
 
 ## Getting started
 With dart
@@ -28,7 +28,7 @@ dependencies:
 import 'package:dns_resolver/dns_resolver.dart';
 
 void main() async {
-  var resolver = GoogleResolver();
+  var resolver = GoogleDnsResolver();
   var record = await resolver.resolve(
     "www.apple.com",
     DnsRecordType.A,
