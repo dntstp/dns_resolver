@@ -9,10 +9,13 @@ Resolver class implements DnsCache, so subsequent queries for the same domain wi
 For simplicity, if the domain resolves to multiple IP addresses, only the last one will be returned.
 
 TODO:
+- [*] Implement dns-json models
 - [*] add support for Cloudflare 1.1.1.1
+- [*] add support for Google Public DNS
+- [*] add support for custom resolvers
 
 ## Getting started
-With dart
+Install with dart
 ```` sh
 dart pub add dns_resolver
 ````
@@ -22,17 +25,5 @@ dependencies:
   dns_resolver: ^0.1.1
 ````
 
-## Usage
 
-``` dart
-import 'package:dns_resolver/dns_resolver.dart';
 
-void main() async {
-  var resolver = GoogleDnsResolver();
-  var record = await resolver.resolve(
-    "www.apple.com",
-    DnsRecordType.A,
-  );
-  print(record);
-}
-```

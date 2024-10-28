@@ -1,10 +1,11 @@
 import 'dart:convert';
-import 'package:dns_resolver/models/response.dart';
+
 import 'package:dns_resolver/models/record.dart';
+import 'package:dns_resolver/models/response.dart';
 import 'package:http/http.dart';
 
 class DnsCache {
-  Map<String, DnsRecord> _cache = {};
+  final Map<String, DnsRecord> _cache = {};
 
   String _getKey(String name, DnsRecordType type) {
     return '$name:${type.name}';

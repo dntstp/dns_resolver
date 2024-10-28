@@ -8,8 +8,7 @@ class DnsQuestion {
   });
 
   factory DnsQuestion.fromJson(Map<String, dynamic> json) => DnsQuestion(
-    name: json["name"],
-    type: json["type"],
-  );
-
+        name: json["name"],
+        type: json["type"],
+      );
 }

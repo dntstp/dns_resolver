@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dns_resolver/models/question.dart';
 import 'package:dns_resolver/models/record.dart';
 
@@ -25,15 +23,15 @@ class DnsResponse {
   });
 
   factory DnsResponse.fromJson(Map<String, dynamic> json) => DnsResponse(
-    status: json["Status"],
-    tc: json["TC"],
-    rd: json["RD"],
-    ra: json["RA"],
-    ad: json["AD"],
-    cd: json["CD"],
-    question: List<DnsQuestion>.from(json["Question"].map((x) => DnsQuestion.fromJson(x))),
-    answer: List<DnsRecord>.from((json["Answer"] ?? []).map((x) => DnsRecord.fromJson(x))),
-  );
-
+        status: json["Status"],
+        tc: json["TC"],
+        rd: json["RD"],
+        ra: json["RA"],
+        ad: json["AD"],
+        cd: json["CD"],
+        question: List<DnsQuestion>.from(
+            json["Question"].map((x) => DnsQuestion.fromJson(x))),
+        answer: List<DnsRecord>.from(
+            (json["Answer"] ?? []).map((x) => DnsRecord.fromJson(x))),
+      );
 }
-

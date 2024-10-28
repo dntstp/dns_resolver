@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:dns_resolver/dns_resolver.dart';
 import 'package:dns_resolver/models/record.dart';
 import 'package:test/test.dart';
@@ -11,7 +10,6 @@ void main() {
     ];
 
     test('Test apple.com', () async {
-
       for (var resolver in resolvers) {
         var record = await resolver.resolve(
           "apple.com",
@@ -19,10 +17,9 @@ void main() {
         );
         expect(record, isNotNull);
         expect(record!.ttl, greaterThan(0));
-        expect(record!.isExpired, isFalse);
+        expect(record.isExpired, isFalse);
         expect(record.type, equals(DnsRecordType.A));
       }
-
     });
 
     test('Test NXDOMAIN', () async {
@@ -43,12 +40,12 @@ void main() {
         );
         expect(record, isNotNull);
         expect(record!.ttl, greaterThan(0));
-        expect(record!.isExpired, isFalse);
+        expect(record.isExpired, isFalse);
         expect(record.type, equals(DnsRecordType.MX));
       }
     });
 
-    test('Test Cloudflare''s One One', () async {
+    test('Test Cloudflare' 's One One', () async {
       for (var resolver in resolvers) {
         var record = await resolver.resolve(
           "one.one.one.one",
@@ -56,11 +53,10 @@ void main() {
         );
         expect(record, isNotNull);
         expect(record!.ttl, greaterThan(0));
-        expect(record!.isExpired, isFalse);
+        expect(record.isExpired, isFalse);
         expect(record.type, equals(DnsRecordType.A));
         expect(record.data, isIn(['1.1.1.1', '1.0.0.1']));
       }
     });
-
   });
 }

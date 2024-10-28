@@ -14,3 +14,7 @@
 ## 0.1.2
 
 - Updated dart version in pubspec.yaml.
+
+## 0.1.4
+
+- Updated  docs.
