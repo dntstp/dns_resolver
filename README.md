@@ -19,7 +19,7 @@ dart pub add dns_resolver
 This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
 ```` yaml
 dependencies:
-  dns_resolver: ^0.0.1
+  dns_resolver: ^0.1.1
 ````
 
 ## Usage
