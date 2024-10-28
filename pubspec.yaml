@@ -1,10 +1,10 @@
 name: dns_resolver
 description: Dart package that implements DNS over HTTPS client
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/dntstp/dns_resolver
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.5.1
 
 dependencies:
   http: ^1.2.2
